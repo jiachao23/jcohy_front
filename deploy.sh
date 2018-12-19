@@ -1,16 +1,20 @@
 #!/bin/bash
 
-. /etc/profile
+source /etc/profile
 
 WORK_DIR="/opt/jcohy"
 SERVICE_DIR="$WORK_DIR/jcohy_front"
 
-if [ ! -d $WORK_DIR ]; then
-     mkdir -p $WORK_DIR
+npm install
+
+npm run build
+
+if [  -d $SERVICE_DIR ]; then
+     rm -rf $SERVICE_DIR
 fi
 
-if [ ! -d $SERVICE_DIR ]; then
-     rm -rf $SERVICE_DIR
+if [ ! -d $WORK_DIR ]; then
+     mkdir -p $WORK_DIR
 fi
 
 mkdir -p $SERVICE_DIR
