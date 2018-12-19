@@ -52,7 +52,7 @@
           href="http://router.vuejs.org/"
           target="_blank"
         >
-          vue-router
+          vue-router（I love three things in this world, the sun ,the moon and you. The sun for the day, the moon for the night, and you forever!）
         </a>
       </li>
       <li>
