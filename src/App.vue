@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import HeaderTop from './components/HeaderTop'
+import HeaderTop from './components/header/HeaderTop'
 export default {
  components:{
    HeaderTop

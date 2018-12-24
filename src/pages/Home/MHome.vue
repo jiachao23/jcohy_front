@@ -1,11 +1,19 @@
 <template>
-  <HeaderTop>Home</HeaderTop>
+  <div>
+    <TopSection/>
+    <Banner/>
+  </div>
+
 </template>
 
 <script>
-
+  import TopSection from '../../components/header/TopSection'
+  import Banner from '../../components/Banner'
   export default {
-    name: "home"
+    components:{
+      Banner,
+      TopSection
+    }
   }
 </script>
 
