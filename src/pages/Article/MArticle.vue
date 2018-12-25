@@ -1,9 +1,13 @@
 <template>
-  <div>Article</div>
+  <ArticleMain/>
 </template>
 
 <script>
+  import ArticleMain from '../../components/article/ArticleMain'
   export default {
+    components:{
+      ArticleMain
+    }
   }
 </script>
 

@@ -9,11 +9,9 @@
 
 <script>
   import TopSection from '../../components/header/TopSection'
-  import Banner from '../../components/left/Banner'
-  import HomeBody from '../../components/body/HomeBody'
+  import HomeBody from '../../components/index/HomeBody'
   export default {
     components:{
-      Banner,
       TopSection,
       HomeBody
     }
