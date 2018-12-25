@@ -9,10 +9,14 @@
 
 <script>
 import HeaderTop from './components/header/HeaderTop'
+import {mapActions} from 'vuex'
 export default {
  components:{
    HeaderTop
- }
+ },
+  mounted(){
+   this.$store.dispatch('getNotices')
+  }
 }
 </script>
 

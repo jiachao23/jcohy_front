@@ -1,22 +1,25 @@
 <template>
   <div>
+
     <TopSection/>
-    <Banner/>
+    <HomeBody/>
   </div>
 
 </template>
 
 <script>
   import TopSection from '../../components/header/TopSection'
-  import Banner from '../../components/Banner'
+  import Banner from '../../components/left/Banner'
+  import HomeBody from '../../components/body/HomeBody'
   export default {
     components:{
       Banner,
-      TopSection
+      TopSection,
+      HomeBody
     }
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style >
 
 </style>

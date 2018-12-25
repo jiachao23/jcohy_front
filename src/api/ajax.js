@@ -1,5 +1,5 @@
 
-import axios from './ajax'
+import axios from 'axios'
 
 export default function ajax(url='',data={},headers={},method='GET') {
 
@@ -15,9 +15,9 @@ export default function ajax(url='',data={},headers={},method='GET') {
         dataStr = dataStr.substring(0,dataStr.lastIndexOf('&'))
         url = url + '?'+dataStr
       }
-      promise = axios.get(url,headers)
+      promise = axios.get(url)
     }else{
-      promise = axios.post(url,data,headers)
+      promise = axios.post(url,data)
     }
     promise.then(response => {
       resolve(response.data)
