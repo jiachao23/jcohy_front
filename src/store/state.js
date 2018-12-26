@@ -2,5 +2,11 @@
 对象状态管理
  */
 export default {
-  notices:[]
+  notices:[],
+  categories:[],
+  resources:[],
+  tags:[],
+  links:[],
+  blogs:[],
+  blog:{}
 }

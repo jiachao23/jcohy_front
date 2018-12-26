@@ -3,7 +3,7 @@
     <div carousel-item="" >
       <el-carousel height="350px">
         <el-carousel-item v-for="(item,index) in imgList" :key="index" class="banner">
-          <img v-bind:src="item.url">
+          <img class="fillimage" v-bind:src="item.url">
           <h3>{{ item.title }}</h3>
         </el-carousel-item>
       </el-carousel>
@@ -40,19 +40,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .blog-main-left {
-    width: 100%;
-    float: left;
+  .fillimage{
+    width :100%;
+    height :100%
   }
-  @media (min-width: 992px) {
-    .blog-main > .blog-main-left {
-      width: 70%;
-    }
-  }
-  img{
-    width:100%;
-    height :100%;
-  }
-
-
 </style>

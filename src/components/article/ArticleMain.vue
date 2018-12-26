@@ -6,9 +6,9 @@
 
       <div class="blog-main">
 
-        <div class="blog-main-left">
-          <ArticleList/>
-        </div>
+        <!--<div class="blog-main-left">-->
+          <!--<ArticleList/>-->
+        <!--</div>-->
 
         <div class="blog-main-right">
           <div class="blog-search">
@@ -83,6 +83,7 @@
 <script>
   import ArticleList from '../common/ArticleList'
   import Breadcrumb from '../common/Breadcrumb'
+  import '../../../static/css/jcohy/article.css'
   export default {
    components:{
      ArticleList,

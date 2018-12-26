@@ -1,18 +1,18 @@
 <template>
   <div>
-  <div class="shadow"  style="text-align:center;font-size:16px;padding:40px 15px;background:#fff;margin-bottom:15px;">
+  <div class="shadow"  v-show="isSearch" style="text-align:center;font-size:16px;padding:40px 15px;background:#fff;margin-bottom:15px;">
     未搜索到与【<span style="color: #FF5722;">keywords</span>】有关的文章，随便看看吧！
   </div>
   <div class="article shadow">
     <div class="article-left">
-      <img src="../../../static/images/banner/01.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
+      <img src="../../../static/images/banner/01.jpg"  />
     </div>
     <div class="article-right">
       <div class="article-title">
-        <a href="">基于laypage的layui扩展模块（pagesize.js）！</a>
+        <a href="">{{blog.title}}</a>
       </div>
       <div class="article-abstract">
-        该模块主要是针对当前版本laypage没有页容量控制功能而制作，使用该模块后即可实现每页显示多少条数据的控制！本人原创，但是可能有可能只对本人的分页写法有用！
+        {{blog.summary}}
       </div>
     </div>
     <div class="clear"></div>
@@ -29,7 +29,7 @@
 
 <script>
   export default {
-
+    props:['blog','index','isSearch'],
   }
 </script>
 
