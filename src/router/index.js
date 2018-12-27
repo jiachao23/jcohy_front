@@ -4,6 +4,7 @@ import MHome from '../pages/Home/MHome'
 import MArticle from '../pages/Article/MArticle'
 import MProfile from '../pages/Profile/MProfile'
 import MResource from '../pages/Resource/MResource'
+import ArticleDetails from '../pages/Article/ArticleDetails'
 
 Vue.use(Router)
 
@@ -27,7 +28,17 @@ export default new Router({
       component: MArticle,
       meta:{
         showHeader:true
-      }
+      },
+      children:[
+        {
+          path:'/article/view/:id',
+          component:ArticleDetails
+        },
+        {
+          path:'/articles',
+
+        }
+      ],
     },
     {
       path: '/resource',

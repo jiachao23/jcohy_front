@@ -1,45 +1,6 @@
 
 <template>
-  <!-- 首页主题body，包括顶部的公告，和左右两侧 start -->
-    <div class="blog-body">
-      <div class="blog-container">
-        <div class="blog-main">
-          <!-- 公告部分 start -->
-          <Notice/>
-          <!-- 公告部分 end -->
-          <!-- left start -->
-          <!-- banner start-->
-          <div class="blog-main-left" style="margin-bottom: 15px">
-            <Banner/>
-          </div>
-          <div class="blog-main-right">
-            <!--profile info start -->
-            <Me/>
 
-            <!--profile Info end-->
-          </div>
-          <div class="blog-main-left">
-            <ArticleList v-for="(blog,index) in blogs" :key="index" :blog="blog" :search="isSearch">
-
-            </ArticleList>
-          </div>
-          <!--banner end-->
-          <!-- left end -->
-          <!-- right start-->
-          <div class="blog-main-right">
-            <!--profile info start -->
-            <Cards/>
-
-            <!--profile Info end-->
-          </div>
-
-          <!--right end-->
-
-    <div class="clear"></div>
-  </div>
-  </div>
-
-  </div>
 </template>
 
 <script>

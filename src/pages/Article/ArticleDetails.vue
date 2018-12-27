@@ -1,12 +1,10 @@
 <template>
-  <div class="blog-main-left">
-
-  </div>
+<div>sdsffffffffffffffffffff</div>
 </template>
 
 <script>
   export default {
-    name: "blog"
+    name: "article-details"
   }
 </script>
 
