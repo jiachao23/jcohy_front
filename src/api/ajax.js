@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 
+
 export default function ajax(url='',data={},headers={},method='GET') {
 
   return new Promise(function (resolve,reject) {

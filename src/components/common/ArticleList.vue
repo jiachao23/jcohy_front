@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(blog,index) in blogs" :key="index">
-    <div class="article shadow" @click="$router.push('/article/view/'+blog.id)">
+    <div class="article shadow">
       <div class="article-left">
         <img src="../../../static/images/banner/01.jpg"  />
       </div>

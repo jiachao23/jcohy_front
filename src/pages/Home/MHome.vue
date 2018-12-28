@@ -29,8 +29,12 @@
           <!-- right start-->
           <div class="blog-main-right">
             <!--profile info start -->
-            <Cards/>
-
+            <Cards cardType="leftHorizontal" title="热文排行" :datas="blogs"/>
+            <Cards cardType="leftHorizontal" title="分享排行" :datas="blogs"/>
+            <Cards cardType="vertical" title="标签分类" :datas="tags"/>
+            <Cards cardType="leftHorizontal" title="资源分享" :datas="resources"/>
+            <Cards cardType="asideHorizontal" title="时光轴" :datas="timelines"/>
+            <Cards cardType="vertical" title="友情链接" :datas="links" :insideJump="false"/>
             <!--profile Info end-->
           </div>
 
@@ -57,7 +61,7 @@
   export default {
     name: "home",
     computed:{
-      ...mapState(['blogs'])
+      ...mapState(['blogs','categories','resources','tags','timelines','links'])
     },
     components:{
       TopSection,

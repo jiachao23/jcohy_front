@@ -2,7 +2,7 @@
 vuex 的mutations 模块
  */
 import {
-  RECEIVE_NOTICES,RECEIVE_CATEGORIES,RECEIVE_TAGS,RECEIVE_LINKS,RECEIVE_RESOURCES,RECEIVE_BLOG
+  RECEIVE_NOTICES,RECEIVE_CATEGORIES,RECEIVE_TAGS,RECEIVE_LINKS,RECEIVE_RESOURCES,RECEIVE_BLOG,RECEIVE_TIMELINES
 } from './mutation-types'
 export default {
   [RECEIVE_NOTICES](state,{notices}){
@@ -22,5 +22,8 @@ export default {
   },
   [RECEIVE_BLOG](state,{blogs}){
     state.blogs = blogs
+  },
+  [RECEIVE_TIMELINES](state,{timelinks}){
+    state.timelines = timelinks
   }
 }

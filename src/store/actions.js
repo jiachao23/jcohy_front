@@ -2,10 +2,10 @@
 vuex 的actions 模块
  */
 import {
-  reqNotices,reqCategories,reqTags,reqLinks,reqResources,reqBlogs
+  reqNotices,reqCategories,reqTags,reqLinks,reqResources,reqBlogs,reqTimeLines
 } from '../api'
 import {
-  RECEIVE_NOTICES,RECEIVE_CATEGORIES,RECEIVE_TAGS,RECEIVE_LINKS,RECEIVE_RESOURCES,RECEIVE_BLOG
+  RECEIVE_NOTICES,RECEIVE_CATEGORIES,RECEIVE_TAGS,RECEIVE_LINKS,RECEIVE_RESOURCES,RECEIVE_BLOG,RECEIVE_TIMELINES
 } from './mutation-types'
 export default {
 
@@ -32,5 +32,9 @@ export default {
   async getBlogs({commit},type){
     const result = await reqBlogs(type)
     commit(RECEIVE_BLOG,{blogs: result.data})
+  },
+  async getTimeLines({commit},type){
+    const result = await reqTimeLines()
+    commit(RECEIVE_TIMELINES,{timelinks: result.data})
   }
 }

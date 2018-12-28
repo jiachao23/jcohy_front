@@ -8,5 +8,6 @@ export default {
   tags:[],
   links:[],
   blogs:[],
+  timelines:[],
   blog:{}
 }

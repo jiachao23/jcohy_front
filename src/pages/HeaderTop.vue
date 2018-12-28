@@ -39,8 +39,11 @@
   #logo a { width: 260px; height: 60px; margin: 10px 0 0 0; position: absolute; background: url(../../static/images/logo_text.png) no-repeat; display: block }
   nav { float: right; width: 100%; margin: 30px 0 0 0; text-align: right }
   nav div { position: relative; display: inline-block; font-size: 18px; font-family: "微软雅黑", Arial, Helvetica, sans-serif; }
-  nav div:hover { text-decoration: none }
+  nav div:hover { text-decoration: none;cursor: pointer }
   .topnav div { margin: 0 5px; padding: 0 8px; }
   .topnav div span{display: block; }
+
+
+
   .topnav_current { color: #e15782; }
 </style>

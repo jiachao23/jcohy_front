@@ -13,5 +13,7 @@ export const RECEIVE_LINKS = 'receive_links'
 export const RECEIVE_RESOURCES = 'receive_resources'
 // 接收博客信息
 export const RECEIVE_BLOG = 'receive_blogs'
+// 接收博客信息
+export const RECEIVE_TIMELINES = 'receive_timelines'
 
 

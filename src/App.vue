@@ -21,6 +21,7 @@ export default {
     this.$store.dispatch('getResources')
     this.$store.dispatch('getBlogs',"hot")
     this.$store.dispatch('getBlogs',"share")
+    this.$store.dispatch('getTimeLines')
   }
 }
 </script>
