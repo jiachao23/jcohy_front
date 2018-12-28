@@ -11,47 +11,10 @@
           <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
             <legend>文章列表</legend>
           </fieldset>
+          <ArticleList :blogs = "blogs">
 
-            <!--<ArticleList v-for="(blog,index) in blogs" :key="index" :index="blog.id" :blog="blog" >-->
-
-            <!--</ArticleList>-->
-
-          <div v-for="(blog,index) in blogs" :key="index" :index="blog.id" :blog="blog">
-
-            <router-link class="article shadow" :to="'/article/view/'+blog.id">
-              <div class="article-left">
-                <img src="../../../static/images/banner/01.jpg"  />
-              </div>
-              <div class="article-right">
-                <div class="article-title">
-                  <!--<router-link  :to="blog.id ? '/article': '/article/view/'+blog.id">{{blog.title}}-->
-                  <!--</router-link>-->
-                  <!--<a ></a>-->
-                </div>
-                <div class="article-abstract">
-                  {{blog.summary}}
-                </div>
-              </div>
-              <div class="clear"></div>
-              <div class="article-footer">
-                <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-                <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-                <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
-              </div>
-            </router-link>
-            <router-view/>
-          </div>
-
-            <!--<ArticleList v-for="(blog,index) in blogs" :key="index" :index="blog.id" :blog="blog" >-->
-            <!--</ArticleList>-->
-
-          <!--<router-link  :to="blog.id ? '/article': '/article/view/'+blog.id">-->
-          <!--</router-link>-->
-
+          </ArticleList>
         </div>
-
         <div class="blog-main-right">
           <div class="blog-search">
             <form class="layui-form" action="">
@@ -115,9 +78,9 @@
 </template>
 
 <script>
-  import Breadcrumb from '../../components/common/Breadcrumb'
+  import Breadcrumb from '@/components/common/Breadcrumb'
   import '../../../static/css/jcohy/article.css'
-  import ArticleList from '../../components/common/ArticleList'
+  import ArticleList from '@/components/common/ArticleList'
   import {mapState} from 'vuex'
   export default {
     data(){

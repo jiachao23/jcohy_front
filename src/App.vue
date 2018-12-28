@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <!--<router-view/>-->
-    <HeaderTop v-show="$route.meta.showHeader"></HeaderTop>
     <router-view/>
-    <Footter/>
+    <BaseFooter/>
   </div>
 </template>
 
 <script>
-import HeaderTop from './components/header/HeaderTop'
-import Footter from './components/footer/Footter'
+import HeaderTop from './pages/HeaderTop'
+import BaseFooter from './components/common/BaseFooter'
 export default {
  components:{
    HeaderTop,
-   Footter
+   BaseFooter
  },
   mounted(){
     this.$store.dispatch('getNotices')
@@ -27,7 +24,5 @@ export default {
   }
 }
 </script>
-
 <style>
-
 </style>

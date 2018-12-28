@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <TopSection/>
     <!-- 首页主题body，包括顶部的公告，和左右两侧 start -->
     <div class="blog-body">
@@ -47,34 +46,30 @@
 </template>
 
 <script>
-  import TopSection from '../../components/header/TopSection'
-  import Banner from '../../components/left/Banner'
-  import ArticleList from '../../components/common/ArticleList'
-  import Me from '../../components/right/Me'
-  import Cards from '../../components/right/Cards'
-  import {mapState} from 'vuex'
-  import Notice from '../../components/common/Notices'
+  import TopSection from '@/components/common/TopSection'
+  import Banner from '@/components/common/Banner'
+  import Me from '@/components/right/Me'
+  import Cards from '@/components/right/Cards'
+  import Notice from '@/components/common/Notices'
   import '../../../static/css/jcohy/home.css'
+  import ArticleList from '../../components/common/ArticleList'
+  import {mapState} from 'vuex'
   export default {
-    data(){
-      return{
-        isSearch:false
-      }
-    },
+    name: "home",
     computed:{
       ...mapState(['blogs'])
     },
     components:{
       TopSection,
       Banner,
-      ArticleList,
       Notice,
       Me,
-      Cards
+      Cards,
+      ArticleList
     }
   }
 </script>
 
-<style >
+<style lang="stylus" rel="stylesheet/stylus">
 
 </style>
