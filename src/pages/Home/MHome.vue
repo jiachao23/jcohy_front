@@ -50,11 +50,11 @@
 </template>
 
 <script>
-  import TopSection from '@/components/common/TopSection'
-  import Banner from '@/components/common/Banner'
-  import Me from '@/components/right/Me'
-  import Cards from '@/components/right/Cards'
-  import Notice from '@/components/common/Notices'
+  import TopSection from '../../components/common/TopSection'
+  import Banner from '../../components/common/Banner'
+  import Me from '../../components/Me'
+  import Cards from '../../components/Cards'
+  import Notice from '../../components/common/Notices'
   import '../../../static/css/jcohy/home.css'
   import ArticleList from '../../components/common/ArticleList'
   import {mapState} from 'vuex'

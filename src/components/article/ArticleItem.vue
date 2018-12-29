@@ -23,9 +23,17 @@
             </div>
             <div class="article-detail-content" id="article-detail-content">
 
-              <textarea style="display: none;">{{blog.content}}</textarea>
-
-
+              <!--<textarea v-html="compiledMarkdown"></textarea>-->
+              <!--<VueMarkdown :source="blog.content"/>-->
+              <markdown
+                :mdValuesP="blog.content"
+                :fullPageStatusP="false"
+                :editStatusP="false"
+                :previewStatusP="true"
+                :navStatusP="false"
+                :icoStatusP="false"
+                :parseP="true"
+              ></markdown>
             </div>
 
             <div class="blogerinfo-nickname">
@@ -52,15 +60,10 @@
       </div>
 
       <div class="blog-main-right">
-        <!--右边悬浮 平板或手机设备显示-->
-        <div class="category-toggle"><i class="fa fa-chevron-left"></i></div><!--这个div位置不能改，否则需要添加一个div来代替它或者修改样式表-->
-        <div class="article-category shadow">
-          <div class="article-category-title">分类导航</div>
-          <!-- 点击分类后的页面和artile.html页面一样，只是数据是某一类别的 -->
-          <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">${(x.name)!}</a>
-        </div>
-            <li><i class="fa-li fa fa-hand-o-right"></i><a href="${ctx!}/article/view/${x.id}">${(x.title)!}</a></li>
-        </div>
+        <Cards cardType="hasBlockLine" title="分类导航" :datas="tags"/>
+        <Cards cardType="leftHorizontal" title="阅读排行" :datas="blogs"/>
+        <Cards cardType="leftHorizontal" title="分享排行" :datas="blogs"/>
+      </div>
       </div>
       <div class="clear"></div>
     </div>
@@ -68,23 +71,35 @@
 </template>
 
 <script>
-  // import MarkdownEditor from '@/components/markdown/MarkdownEditor'
+  // import VueMarkdown from 'marked'
+  // import marked from 'marked'
+  import markdown from '../../components/markdown/markdown'
+  import 'mavon-editor/dist/css/index.css'
   import '../../../static/css/jcohy/detail.css'
   import {reqBlogById} from '../../api/blogs'
   import {mapState} from 'vuex'
+  import Cards from '../Cards'
   export default {
     name: "article-details",
     created(){
       this.getArticle()
     },
+    components:{
+      // VueMarkdown
+      markdown,
+      Cards
+    },
     data(){
       return {
-        blog:{}
+        blog:{},
       }
     },
     computed:{
-      ...mapState(['blogs'])
+      ...mapState(['blogs','tags']),
       // ...mapState(['blogs','blog'])
+      // compiledMarkdown () {
+      //   return marked(this.blog.content, { sanitize: true })
+      // }
     },
     watch: {
       '$route': 'getArticle'
@@ -94,7 +109,11 @@
         let id = this.$route.params.id
         const reslut = reqBlogById(id)
         this.blog = this.blogs.find( x => x.id*1 === id *1)
-      }
+      },
+      childEventHandler:function(res){
+        // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
+        this.msg=res;
+      },
     }
   }
 </script>

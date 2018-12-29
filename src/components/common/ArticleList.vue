@@ -18,11 +18,11 @@
       </div>
       <div class="clear"></div>
       <div class="article-footer">
-        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
+        <span><i class="fa fa-clock-o"></i> &nbsp;{{blog.publishTime |formatDate}}</span>
+        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;{{blog.username}}</span>
+        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;{{blog.tags}}</span>
+        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;&nbsp;&nbsp;{{blog.shareNum}}</span>
+        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;&nbsp;&nbsp;{{blog.readNum}}</span>
       </div>
     </div>
       </div>
@@ -30,8 +30,15 @@
 </template>
 
 <script>
+  import { formatDate } from "../../utils/TimeUtils";
   export default {
     props:['blogs','index'],
+    filters:{
+      formatDate(time) {
+        var date = new Date(time);
+        return formatDate(date, 'yyyy-MM-dd');
+      }
+    }
   }
 </script>
 

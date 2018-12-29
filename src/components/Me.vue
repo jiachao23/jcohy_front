@@ -1,7 +1,7 @@
 <template>
   <div class="blogerinfo shadow">
     <div class="blogerinfo-figure">
-      <img src="../../../static/images/ico/jcohy.png" alt="Jcohy" title="Jcohy" style="width: 100px;height: 100px;border-radius: 50px"/>
+      <img src="../../static/images/ico/jcohy.png" alt="Jcohy" title="Jcohy" style="width: 100px;height: 100px;border-radius: 50px"/>
     </div>
     <p class="blogerinfo-nickname">Jcohy</p>
     <p class="blogerinfo-introduce">一枚90后程序员，Java开发工程师</p>

@@ -5,12 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
-import mavonEditor from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
+import {formatDate} from './utils/TimeUtils'
 
-Vue.use(mavonEditor)
 Vue.use(ElementUI)
-
+Vue.filter('format',formatDate)
 new Vue({
   el: '#app',
   render:h =>h(App),
