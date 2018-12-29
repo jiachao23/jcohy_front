@@ -23,8 +23,20 @@
         this.$router.replace(path)
       },
       isCurrent(path) {
-        return this.$route.path === path
+        if(path.length === 1){
+          return this.$route.path === path
+        }else{
+          if(path instanceof Object){
+            return this.$route.path.indexOf(path.path) === 0
+          }else{
+            return this.$route.path.indexOf(path) === 0
+          }
+
+        }
       }
+    },
+    watch:{
+      '$route':'isCurrent'
     }
   }
 </script>

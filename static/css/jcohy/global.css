@@ -405,19 +405,19 @@ body {
     }
 
     .bdsharebuttonbox .bds_qzone {
-        background: url(../../../../images/ico/qzone_32.png) no-repeat;
+        background: url(../../images/ico/qzone_32.png) no-repeat;
     }
 
     .bdsharebuttonbox .bds_tsina {
-        background: url(../../../../images/ico/weibo_32.png) no-repeat;
+        background: url(../../images/ico/weibo_32.png) no-repeat;
     }
 
     .bdsharebuttonbox .bds_weixin {
-        background: url(../../../../images/ico/wechat_32.png) no-repeat;
+        background: url(../../images/ico/wechat_32.png) no-repeat;
     }
 
     .bdsharebuttonbox .bds_sqq {
-        background: url(../../../../images/ico/qq_32.png) no-repeat;
+        background: url(../../images/ico/qq_32.png) no-repeat;
     }
 
 .shareIn {

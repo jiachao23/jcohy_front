@@ -17,7 +17,7 @@
               {{blog.title}}
             </div>
             <div class="article-detail-info">
-              <span>编辑时间：{{blog.createdTime}}</span>
+              <span>编辑时间：{{blog.createdTime | formatDate}}</span>
               <span>作者：{{blog.username}}</span>
               <span>浏览量：{{blog.readNum}}</span>
             </div>
@@ -73,6 +73,7 @@
 <script>
   // import VueMarkdown from 'marked'
   // import marked from 'marked'
+  import {formatDate} from '../../utils/TimeUtils'
   import markdown from '../../components/markdown/markdown'
   import 'mavon-editor/dist/css/index.css'
   import '../../../static/css/jcohy/detail.css'
@@ -88,6 +89,12 @@
       // VueMarkdown
       markdown,
       Cards
+    },
+    filters:{
+      formatDate(time) {
+        var date = new Date(time);
+        return formatDate(date, 'yyyy-MM-dd');
+      }
     },
     data(){
       return {
