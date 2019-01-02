@@ -93,6 +93,7 @@
                 this.editStatus = true;
                 this.previewStatus = true;
             }
+            console.log(this.mdValuesP)
         },
         methods: {
             tabFn: function(evt) {
@@ -261,16 +262,19 @@
             }
         },
         watch: {
-            input: function() {
-                let data = {};
-                data.mdValue = this.input;
-                data.htmlValue = marked(this.input);
-                this.$emit('childevent', data);
-                let maxEditScrollHeight=document.querySelector('.mdEditor').scrollHeight-document.querySelector('.mdEditor').clientHeight;
-                let maxPreviewScrollHeight=document.querySelector('.previewContainer').scrollHeight-document.querySelector('.previewContainer').clientHeight;
-                this.maxEditScrollHeight = maxEditScrollHeight
-                this.maxPreviewScrollHeight = maxPreviewScrollHeight
-            }
+            // input: function() {
+            //     let data = {};
+            //     data.mdValue = this.input;
+            //     data.htmlValue = marked(this.input);
+            //     this.$emit('childevent', data);
+            //     let maxEditScrollHeight=document.querySelector('.mdEditor').scrollHeight-document.querySelector('.mdEditor').clientHeight;
+            //     let maxPreviewScrollHeight=document.querySelector('.previewContainer').scrollHeight-document.querySelector('.previewContainer').clientHeight;
+            //     this.maxEditScrollHeight = maxEditScrollHeight
+            //     this.maxPreviewScrollHeight = maxPreviewScrollHeight
+            // },
+          $route(to,from){
+            this.input = this.mdValuesP
+          }
         }
     }
 </script>

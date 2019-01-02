@@ -7,7 +7,7 @@
         <span lay-separator="">/</span>
         <router-link to="/articles" title="文章专栏">文章专栏</router-link>
         <span lay-separator="">/</span>
-        <a><cite></cite></a>
+        <a><cite>{{blog.title}}</cite></a>
       </blockquote>
       <div class="blog-main">
         <div class="blog-main-left">
@@ -22,9 +22,6 @@
               <span>浏览量：{{blog.readNum}}</span>
             </div>
             <div class="article-detail-content" id="article-detail-content">
-
-              <!--<textarea v-html="compiledMarkdown"></textarea>-->
-              <!--<VueMarkdown :source="blog.content"/>-->
               <markdown
                 :mdValuesP="blog.content"
                 :fullPageStatusP="false"
@@ -86,7 +83,6 @@
       this.getArticle()
     },
     components:{
-      // VueMarkdown
       markdown,
       Cards
     },
@@ -103,24 +99,21 @@
     },
     computed:{
       ...mapState(['blogs','tags']),
-      // ...mapState(['blogs','blog'])
-      // compiledMarkdown () {
-      //   return marked(this.blog.content, { sanitize: true })
-      // }
     },
     watch: {
       '$route': 'getArticle'
     },
+
     methods:{
-      getArticle(){
+      async getArticle(){
         let id = this.$route.params.id
-        const reslut = reqBlogById(id)
-        this.blog = this.blogs.find( x => x.id*1 === id *1)
-      },
-      childEventHandler:function(res){
-        // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
-        this.msg=res;
-      },
+        const reslut = await reqBlogById(id)
+        // reslut.then(response =>{
+        //   this.blog = response.data
+        this.blog = reslut.data
+          console.log(this.blog = reslut.data)
+        // })
+      }
     }
   }
 </script>

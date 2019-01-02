@@ -85,8 +85,7 @@
   export default {
     data(){
       return{
-        isSearch:true,
-        isDetail:true
+        isSearch:false,
       }
     },
     computed:{
@@ -104,10 +103,7 @@
     },
     watch: {
       $route(to) {
-        console.log(this.$route.path);
-        if(this.$route.path.indexOf('/article/view/') !== -1){
-          this.isDetail =false
-        }
+
       }
     },
   }
