@@ -65,7 +65,6 @@
     methods:{
       handleSizeChange: function (size) {
         this.size = size;
-        console.log("handleSizeChange"+this.pagesize)  //每页下拉显示数据
       },
       handleCurrentChange: function(currentPage){
         this.page = currentPage;
@@ -83,5 +82,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  .el-pagination{
+    margin 30px
+  }
 </style>

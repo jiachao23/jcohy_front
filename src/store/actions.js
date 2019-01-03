@@ -31,7 +31,7 @@ export default {
   },
   async getBlogs({commit},type){
     const result = await reqBlogs(type)
-    commit(RECEIVE_BLOG,{blogs: result.data})
+    commit(RECEIVE_BLOG,{blogs: result.data,type:type})
   },
   async getTimeLines({commit},type){
     const result = await reqTimeLines()

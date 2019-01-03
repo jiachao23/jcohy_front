@@ -23,7 +23,7 @@
             </div>
             <div class="article-detail-content" id="article-detail-content">
               <markdown
-                :mdValuesP="blog.content"
+                :mdValuesP="blog.content" v-if="blog.content"
                 :fullPageStatusP="false"
                 :editStatusP="false"
                 :previewStatusP="true"
@@ -58,8 +58,8 @@
 
       <div class="blog-main-right">
         <Cards cardType="hasBlockLine" title="分类导航" :datas="tags"/>
-        <Cards cardType="leftHorizontal" title="阅读排行" :datas="blogs"/>
-        <Cards cardType="leftHorizontal" title="分享排行" :datas="blogs"/>
+        <Cards cardType="leftHorizontal" title="阅读排行" :datas="hotblogs"/>
+        <Cards cardType="leftHorizontal" title="分享排行" :datas="shareblogs"/>
       </div>
       </div>
       <div class="clear"></div>
@@ -98,7 +98,7 @@
       }
     },
     computed:{
-      ...mapState(['blogs','tags']),
+      ...mapState(['hotblogs','shareblogs','tags']),
     },
     watch: {
       '$route': 'getArticle'

@@ -7,7 +7,7 @@ export default {
   resources:[],
   tags:[],
   links:[],
-  blogs:[],
   timelines:[],
-  blog:{}
+  hotblogs:{},
+  shareblogs:{}
 }
