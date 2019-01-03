@@ -9,14 +9,14 @@ npm install
 
 npm run build
 
+ssh root@47.107.92.75 "rm -rf $WORK_DIR/jcohy_front.zip"
+scp -v jcohy_front.zip root@47.107.92.75:$WORK_DIR/
+
+ssh root@47.107.92.75
+
 if [  -d $SERVICE_DIR ]; then
-     rm -rf $SERVICE_DIR
+     rm -rf $SERVICE_DIR/*
 fi
 
-if [ ! -d $WORK_DIR ]; then
-     mkdir -p $WORK_DIR
-fi
-
-mkdir -p $SERVICE_DIR
-mv dist/* $SERVICE_DIR
+unzip $WORK_DIR/jcohy_front.zip $SERVICE_DIR/
 
