@@ -14,9 +14,5 @@ scp  -r jcohy_front.zip root@47.107.92.75:$WORK_DIR/
 
 ssh root@47.107.92.75
 
-if [  -d $SERVICE_DIR ]; then
-     rm -rf $SERVICE_DIR/*
-fi
-
-unzip -o $WORK_DIR/jcohy_front.zip -d $SERVICE_DIR
+ssh root@47.107.92.75 "unzip -o $WORK_DIR/jcohy_front.zip -d $SERVICE_DIR"
 
