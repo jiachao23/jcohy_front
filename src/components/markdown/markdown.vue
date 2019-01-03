@@ -1,7 +1,6 @@
 <template>
     <div class="mdContainer" :class="{ fullPage: fullPageStatus }">
         <div class="navContainer" v-if="navStatus">
-            <div class="nameContainer" v-if="icoStatusP" @click="happyDay">OVEN-mdEditor</div>
             <div class="markContainer">
                 <ul class="markListGroup">
                     <li class="markListItem" @click="addStrong" title="strong"><b>B</b></li>
@@ -29,9 +28,9 @@
             </div>
         </div>
         <div class="mdBodyContainer" :class="{ noMenu: !navStatus }">
-            <div class="editContainer" v-if="editStatus">
-                <textarea name="" class="mdEditor" @keydown.9="tabFn" v-scroll="editScroll" v-model="input"></textarea>
-            </div>
+            <!--<div class="editContainer" v-if="editStatus">-->
+                <!--<textarea name="" class="mdEditor" @keydown.9="tabFn" v-scroll="editScroll" v-model="input"></textarea>-->
+            <!--</div>-->
             <div class="previewContainer markdown-body" v-scroll="previewScroll" v-html="compiledMarkdown" v-if="previewStatus">
             </div>
         </div>
@@ -93,7 +92,6 @@
                 this.editStatus = true;
                 this.previewStatus = true;
             }
-            console.log(this.mdValuesP)
         },
         methods: {
             tabFn: function(evt) {
@@ -252,29 +250,11 @@
                     document.querySelector('.previewContainer').scrollTop = this.maxPreviewScrollHeight*topPercent;
                 }
             },
-            happyDay:function(){
-                window.open('https://github.com/ovenslove/vue-mdEditor');
-            }
         },
         computed: {
             compiledMarkdown: function() {
-              return  marked(this.input);
-            }
-        },
-        watch: {
-            // input: function() {
-            //     let data = {};
-            //     data.mdValue = this.input;
-            //     data.htmlValue = marked(this.input);
-            //     this.$emit('childevent', data);
-            //     let maxEditScrollHeight=document.querySelector('.mdEditor').scrollHeight-document.querySelector('.mdEditor').clientHeight;
-            //     let maxPreviewScrollHeight=document.querySelector('.previewContainer').scrollHeight-document.querySelector('.previewContainer').clientHeight;
-            //     this.maxEditScrollHeight = maxEditScrollHeight
-            //     this.maxPreviewScrollHeight = maxPreviewScrollHeight
-            // },
-          $route(to,from){
-            this.input = this.mdValuesP
-          }
+              return  marked(this.mdValuesP);
+            },
         }
     }
 </script>

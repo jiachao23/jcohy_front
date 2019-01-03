@@ -103,17 +103,13 @@
     watch: {
       '$route': 'getArticle'
     },
-
     methods:{
       async getArticle(){
         let id = this.$route.params.id
         const reslut = await reqBlogById(id)
-        // reslut.then(response =>{
-        //   this.blog = response.data
         this.blog = reslut.data
-          console.log(this.blog = reslut.data)
-        // })
-      }
+        console.log(typeof this.blog.content)
+      },
     }
   }
 </script>
