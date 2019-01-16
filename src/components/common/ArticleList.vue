@@ -33,10 +33,10 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="page"
-      :page-sizes="[5, 10, 20, 40]"
+      :page-sizes="[5,10]"
       :page-size="size"
       layout="prev, pager, next"
-      :total="1000">
+      :total="total">
     </el-pagination>
   </div>
 </template>
@@ -51,7 +51,8 @@
     data(){
       return{
         page:1, //初始页
-        size:10,    //    每页的数据
+        size:5,    //    每页的数据
+        total:100,
         blogs:[]
       }
     },
@@ -64,18 +65,16 @@
     methods:{
       handleSizeChange: function (size) {
         this.size = size;
-        console.log("handleSizeChange"+this.pagesize)  //每页下拉显示数据
       },
       handleCurrentChange: function(currentPage){
         this.page = currentPage;
         this.handleBlogList()
       },
-      handleBlogList(){
+      async handleBlogList(){
         const {page,size} = this
-        const result = reqBlogByPage({page,size})
-        result.then(response => {
-          this.blogs = response.data
-        })
+        const result =await reqBlogByPage({page,size})
+        this.blogs = result.data
+        this.total = result.total
       }
     }
 
@@ -83,5 +82,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  .el-pagination{
+    margin 30px
+  }
 </style>

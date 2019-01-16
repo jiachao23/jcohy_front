@@ -20,7 +20,7 @@
             <!--profile Info end-->
           </div>
           <div class="blog-main-left">
-            <ArticleList :blogs = "blogs">
+            <ArticleList>
 
             </ArticleList>
           </div>
@@ -29,8 +29,8 @@
           <!-- right start-->
           <div class="blog-main-right">
             <!--profile info start -->
-            <Cards cardType="leftHorizontal" title="热文排行" :datas="blogs"/>
-            <Cards cardType="leftHorizontal" title="分享排行" :datas="blogs"/>
+            <Cards cardType="leftHorizontal" title="热文排行" :datas="hotblogs"/>
+            <Cards cardType="leftHorizontal" title="分享排行" :datas="shareblogs"/>
             <Cards cardType="vertical" title="标签分类" :datas="tags"/>
             <Cards cardType="leftHorizontal" title="资源分享" :datas="resources"/>
             <Cards cardType="asideHorizontal" title="时光轴" :datas="timelines"/>
@@ -61,7 +61,7 @@
   export default {
     name: "home",
     computed:{
-      ...mapState(['blogs','categories','resources','tags','timelines','links'])
+      ...mapState(['hotblogs','shareblogs','categories','resources','tags','timelines','links'])
     },
     components:{
       TopSection,

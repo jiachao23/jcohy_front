@@ -20,8 +20,13 @@ export default {
   [RECEIVE_RESOURCES](state,{resources}){
     state.resources = resources
   },
-  [RECEIVE_BLOG](state,{blogs}){
-    state.blogs = blogs
+  [RECEIVE_BLOG](state,{blogs,type}){
+    if(type === 'hot'){
+      state.hotblogs = blogs
+    }else if(type === 'share'){
+      state.shareblogs = blogs
+    }
+
   },
   [RECEIVE_TIMELINES](state,{timelinks}){
     state.timelines = timelinks
