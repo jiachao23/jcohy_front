@@ -11,6 +11,9 @@
       <div :class="{topnav_current:iscurrent('/resources')}" @click="goto('/resources')">
         <span>资源分享</span>
       </div>
+      <div @click="gotoProfile">
+        <span>个人简历</span>
+      </div>
     </nav>
   </header>
 </template>
@@ -21,6 +24,9 @@
     methods: {
       goto(path) {
         this.$router.replace(path)
+      },
+      gotoProfile(){
+        window.open('../static/profile/index.html')
       },
       iscurrent(path) {
         if (path.length === 1) {
