@@ -26,7 +26,7 @@
         this.$router.replace(path)
       },
       gotoProfile(){
-        window.open('../static/profile/index.html')
+        window.open('http://profile.jcohy.com/')
       },
       iscurrent(path) {
         if (path.length === 1) {
