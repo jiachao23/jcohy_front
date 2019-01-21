@@ -23,5 +23,9 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  @media only screen and (max-width: 878px) {
+    .blogerinfo{
+      height:100%;
+    }
+  }
 </style>

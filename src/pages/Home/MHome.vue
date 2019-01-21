@@ -79,9 +79,6 @@
     .blog-main-right:nth-child(0) {
       display: none;
     }
-    .blogerinfo{
-      height 100%;
-    }
     #logo a{
       position relative;
     }

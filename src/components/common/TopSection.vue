@@ -38,7 +38,11 @@
     float: left;
     font-size: 14px;
   }
-
+  @media only screen and (max-width: 878px) {
+    .texts{
+      width:250px;
+    }
+  }
   .texts p {
     -webkit-transform: translate(60px);
     -moz-transform: translate(60px);
