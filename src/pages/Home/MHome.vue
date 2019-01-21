@@ -75,5 +75,27 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  @media only screen and (max-width: 878px) {
+    .blog-main-right:nth-child(0) {
+      display: none;
+    }
+    .blogerinfo{
+      height 100%;
+    }
+    #logo a{
+      position relative;
+    }
+    .topnav div{
+      margin 0;
+    }
+    .nav{
+      margin 15px 0 15px 0;
+    }
+    header{
+      width 100%;
+    }
+    #logo{
+      display none;
+    }
+  }
 </style>

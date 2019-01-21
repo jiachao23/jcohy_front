@@ -67,7 +67,7 @@
       }
     },
     computed:{
-      ...mapState(['hotblogs','shareblogs']),
+      ...mapState(['hotblogs','shareblogs','blogs']),
     },
     methods:{
       goto(path) {
