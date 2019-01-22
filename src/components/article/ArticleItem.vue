@@ -33,7 +33,7 @@
               ></markdown>
             </div>
 
-            <div class="blogerinfo-nickname">
+            <div class="blogerinfo-nickname" v-if="blog.url">
               文章来源出处:<a :href="blog.url" target="_blank" >{{blog.url}}</a>
             </div>
 
