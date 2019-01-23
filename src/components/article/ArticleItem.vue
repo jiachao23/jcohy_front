@@ -39,21 +39,21 @@
 
         </div>
         <!-- 评论区域 -->
-        <div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6;">
-          <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
-            <legend>来说两句吧</legend>
-            <div class="layui-field-box">
-              <form class="layui-form blog-editor" action="">
-                <div class="layui-form-item">
-                  <textarea name="editorContent" lay-verify="content" id="remarkEditor" disabled placeholder="暂时不可用" class="layui-textarea layui-hide"></textarea>
-                </div>
-                <div class="layui-form-item">
-                  <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">提交评论</button>
-                </div>
-              </form>
-            </div>
-          </fieldset>
-        </div>
+        <!--<div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6;">-->
+          <!--<fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">-->
+            <!--<legend>来说两句吧</legend>-->
+            <!--<div class="layui-field-box">-->
+              <!--<form class="layui-form blog-editor" action="">-->
+                <!--<div class="layui-form-item">-->
+                  <!--<textarea name="editorContent" lay-verify="content" id="remarkEditor" disabled placeholder="暂时不可用" class="layui-textarea layui-hide"></textarea>-->
+                <!--</div>-->
+                <!--<div class="layui-form-item">-->
+                  <!--<button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">提交评论</button>-->
+                <!--</div>-->
+              <!--</form>-->
+            <!--</div>-->
+          <!--</fieldset>-->
+        <!--</div>-->
       </div>
 
       <div class="blog-main-right">
