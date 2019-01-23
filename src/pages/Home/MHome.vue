@@ -32,7 +32,7 @@
             <Cards cardType="leftHorizontal" title="热文排行" :datas="hotblogs"/>
             <Cards cardType="leftHorizontal" title="分享排行" :datas="shareblogs"/>
             <Cards cardType="vertical" title="标签分类" :datas="tags"/>
-            <Cards cardType="leftHorizontal" title="资源分享" :datas="resources"/>
+            <!--<Cards cardType="leftHorizontal" title="资源分享" :datas="resources"/>-->
             <Cards cardType="asideHorizontal" title="时光轴" :datas="timelines"/>
             <Cards cardType="vertical" title="友情链接" :datas="links" :insideJump="false"/>
             <!--profile Info end-->
