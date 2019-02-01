@@ -19,10 +19,10 @@
             <form class="layui-form" action="">
               <div class="layui-form-item">
                 <div class="search-keywords  shadow">
-                  <input type="text" name="keywords" lay-verify="required" placeholder="输入关键词搜索" autocomplete="off" class="layui-input">
+                  <input type="text" name="keywords" lay-verify="required" placeholder="输入关键词搜索" autocomplete="off" class="layui-input layui-disabled" >
                 </div>
                 <div class="search-submit  shadow">
-                  <a class="search-btn" lay-submit="formSearch" lay-filter="formSearch"><i class="fa fa-search"></i></a>
+                  <a class="search-btn" lay-submit="formSearch" lay-filter="formSearch" onclick="javascript:layer.msg('此功能暂不可用')"><i class="fa fa-search"></i></a>
                 </div>
               </div>
             </form>
