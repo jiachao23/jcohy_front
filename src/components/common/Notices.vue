@@ -1,9 +1,9 @@
 <template>
   <div class="home-tips shadow">
     <i style="float:left;line-height:17px;" class="fa fa-volume-up"></i>
-    <div class="home-tips-container" v-for="(notice,index) in notices" :key="index">
-      <span style="color: red">{{notice.content}}<a :href="notice.url" target="_blank" style="color:#01AAED">&nbsp;&nbsp;点我前往</a></span>
-      <span style="color: #009688">{{notice.content}}</span>
+    <div class="home-tips-container" >
+        <span v-for="(notice,index) in notices" :key="index" style="color: red">{{notice.content}}<a :href="notice.url" target="_blank" style="color:#01AAED">&nbsp;&nbsp;点我前往</a></span>
+<!--        <span style="color: #009688">{{notice.content}}</span>-->
     </div>
   </div>
 </template>

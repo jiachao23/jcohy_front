@@ -1,4 +1,5 @@
 'use strict'
+const webpack = require('webpack')
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -104,6 +105,11 @@ module.exports = {
           {source: './dist', destination: './jcohy_front.zip'},
         ]
       }
+    }),
+    new webpack.ProvidePlugin({
+      $:'jquery',
+      jQuery:'jquery',
+      jquery:'jquery'
     })
   ]
 }

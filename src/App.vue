@@ -19,47 +19,27 @@
   </div>
 </template>
 <script>
-import HeaderTop from './pages/HeaderTop'
-import BaseFooter from './components/common/BaseFooter'
-// import {} from '../static/js/global'
-export default {
- components:{
-   HeaderTop,
-   BaseFooter
- },
-  mounted(){
-    this.$store.dispatch('getNotices')
-    this.$store.dispatch('getCategories')
-    this.$store.dispatch('getTags')
-    this.$store.dispatch('getLinks')
-    this.$store.dispatch('getResources')
-    this.$store.dispatch('getBlogs',"hot")
-    this.$store.dispatch('getBlogs',"share")
-    this.$store.dispatch('getTimeLines')
-    this.fixbar()
-  },
-  methods:{
-    fixbar(){
-      window.layui.use(['util'], function(){
-        let util = layui.util,
-          $ = layui.jquery;
-        util.fixbar({
-          bar1: '&#xe641;',
-          click: function (type) {
-            if (type === 'bar1') {
-              let sear = new RegExp('layui-hide');
-              if (sear.test($('.blog-share').attr('class'))) {
-                shareIn();//显示百度分享
-              } else {
-                shareOut();
-              }
-            }
-          }
-        });
-      });
+  import HeaderTop from './pages/HeaderTop'
+  import BaseFooter from './components/common/BaseFooter'
+  // import {} from '../static/js/global'
+  export default {
+    components: {
+      HeaderTop,
+      BaseFooter
+    },
+    mounted () {
+      this.$store.dispatch('getNotices')
+      this.$store.dispatch('getCategories')
+      this.$store.dispatch('getTags')
+      this.$store.dispatch('getLinks')
+      this.$store.dispatch('getResources')
+      this.$store.dispatch('getBlogs', 'hot')
+      this.$store.dispatch('getBlogs', 'share')
+      this.$store.dispatch('getTimeLines')
+    },
+    methods: {
     }
   }
-}
 </script>
 <style>
 </style>
